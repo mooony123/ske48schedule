@@ -40,7 +40,7 @@ def schedule_to_str(schedule: dict) -> str:
         date_str = 'TODAY' if (int(day) == datetime.now(tz).day) else f"{day} {schedule[day]['dow']}"
         return_str += (date_str + '\n\n')
         for entry in schedule[day]['entries']:
-            return_str += f"{entry['cat']}\n  {entry['title']} {entry['url']}\n"
+            return_str += f"{entry['cat']}\n  {entry['title']} <{entry['url']}>\n"
     return return_str
 
 def todays_schedule_str() -> str:
